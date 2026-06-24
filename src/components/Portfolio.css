@@ -1,0 +1,145 @@
+.portfolio {
+  background: var(--bg-2);
+  padding: 7rem 0;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.75rem;
+  margin-bottom: 4rem;
+}
+
+.project-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.5s ease, transform 0.5s ease, border-color 0.3s;
+}
+
+.project-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.project-card:hover {
+  border-color: var(--card-accent, var(--accent));
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+}
+
+.project-preview {
+  background: #0d1117;
+  border-bottom: 1px solid var(--border);
+  font-family: var(--font-code);
+  font-size: 0.8rem;
+}
+
+.preview-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.6rem 1rem;
+  border-bottom: 1px solid var(--border);
+  background: rgba(255,255,255,0.03);
+}
+
+.bar-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.bar-title {
+  margin-left: 0.5rem;
+  color: var(--text-muted);
+  font-size: 0.72rem;
+}
+
+.preview-code {
+  padding: 1rem;
+  min-height: 72px;
+}
+
+.code-line {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 0.35rem;
+}
+
+.line-num {
+  color: rgba(255,255,255,0.15);
+  user-select: none;
+  min-width: 1rem;
+  text-align: right;
+}
+
+.line-text {
+  color: #abb2bf;
+  white-space: pre;
+}
+
+.project-info {
+  padding: 1.5rem;
+}
+
+.project-meta {
+  margin-bottom: 0.6rem;
+}
+
+.project-category {
+  font-family: var(--font-code);
+  font-size: 0.72rem;
+  color: var(--card-accent, var(--accent));
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.project-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.65rem;
+}
+
+.project-desc {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+  margin-bottom: 1.25rem;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.project-tag {
+  font-family: var(--font-code);
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+}
+
+.portfolio-cta {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.portfolio-cta p {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+}
+
+@media (max-width: 760px) {
+  .portfolio-grid { grid-template-columns: 1fr; }
+  .portfolio { padding: 5rem 0; }
+}
